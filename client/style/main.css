@@ -1,0 +1,56 @@
+.container {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#title {
+    margin: 3%;
+}
+
+#url {
+    width: 50%;
+    margin: 3%;
+}
+
+.box {
+    width: 100%;
+    height: 300px;
+    overflow: scroll;
+    resize: none;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#infoBoxes {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+#crawling {
+    float: right;
+    flex-grow: 1;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#scanning {
+    float: left;
+    flex-grow: 1;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.info {
+    text-align: left;
+}
+
+#result {
+    text-align: center;
+    margin: 3%;
+}
+
+#rgbValue {
+    resize: none;
+    font-family: 'Share Tech Mono', monospace;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}

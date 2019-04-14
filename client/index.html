@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <title> Average Site Color</title>
+
+</head>
+
+<body class="container text-center">
+    <h1 id='title'> Average Site Color </h1>
+    <p>Enter a URL to find that websites average color. If you can't think of a url,
+        I've put an example in for you!</p>
+    <div>
+        <input id='url' value='https://madelinecodes.github.io/'>
+        <button type='submit' onclick='crawl()' class="btn btn-outline-info">Go</button>
+    </div>
+    <div id='infoBoxes'>
+        <div id='crawling'>
+            <p class='info'>Crawling:</p>
+            <textarea id='crawlingBox' class='box' readonly></textarea>
+        </div>
+        <div id='scanning'>
+            <p class='info'>Scanning:</p>
+            <textarea id='scanningBox' class='box' readonly></textarea>
+        </div>
+    </div>
+    <div id='result'>
+        <p>Average RGB value: </p>
+        <textarea id='rgbValue' readonly></textarea>
+    </div>
+</body>
+<script src="client.js"></script>
+
+</html>

@@ -10,10 +10,9 @@ wss.on('connection', function connection(ws) {
      */
     ws.on('message', function incoming(message) {
 
-        const crawler = spawn('python', ['crawler.py', message]);
+        const crawler = spawn('python', ['crawler.py', message, '10']);
         crawler.stdout.on('data', function (data) {
             // Buffer to string
-            console.log(String(data));
             ws.send(String(data));
         });
 
