@@ -1,5 +1,5 @@
-
 import sys
+import json
 import urllib
 from urllib import request, parse
 from urllib.parse import urlparse, urljoin
@@ -27,6 +27,7 @@ class LinkParser(HTMLParser):
     def scanner(self):
         while self.pages_to_check:
             page = self.pages_to_check.pop()
+            print(json.dumps({'crawling':page}), flush=True)
             req = Request(page, headers={'User-Agent': agent})
             try:
                 res = request.urlopen(req)
@@ -38,6 +39,7 @@ class LinkParser(HTMLParser):
                     self.feed(body)
         self.average_color()
 
+    # print the average color of all crawled images
     def average_color(self):
         pixels = sum([image['pixels'] for image in self.images])
         rgb_val = []
@@ -48,7 +50,7 @@ class LinkParser(HTMLParser):
             for idx, val in enumerate(color):
                 weighted_nums.append(val * self.images[idx]['pixels'] / pixels)
                 rgb_val.append(sum(weighted_nums))
-        print(rgb_val)
+        print(json.dumps({'finished':rgb_val}), flush=True)
 
     def handle_starttag(self, tag, attrs):
         for attr in attrs:
@@ -64,6 +66,7 @@ class LinkParser(HTMLParser):
 
     def handle_img(self, src):
         # attempt average color of individual img
+        print(json.dumps({'scanning':src}), flush=True)
         image = image_parse(src)
         if image:
             self.images.append(image)
