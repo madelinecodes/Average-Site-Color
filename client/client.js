@@ -6,11 +6,11 @@ const URL = document.getElementById('url');
 
 function render(data) {
     data = JSON.parse(data);
-    
+
     if (data.crawling !== undefined) {
-        crawlingBox.innerHTML += `${data.crawling}\n`;
+        crawlingBox.innerHTML += `>>> ${data.crawling}\n`;
     } else if (data.scanning !== undefined) {
-        scanningBox.innerHTML += `${data.scanning}\n`;
+        scanningBox.innerHTML += `>>> ${data.scanning}\n`;
     } else if (data.finished !== undefined) {
         const rgb = data.finished;
         const triple = `(${rgb[0].toFixed(2)} , ${rgb[1].toFixed(2)} , ${rgb[2].toFixed(2)})`;
@@ -35,3 +35,10 @@ function crawl() {
         ws.send(URL.value);
     }
 }
+
+var input = document.getElementById("url");
+input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        document.getElementById("submit").click();
+    }
+});

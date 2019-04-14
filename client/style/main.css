@@ -1,5 +1,6 @@
 .container {
     font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
 }
 
 #title {
@@ -9,19 +10,41 @@
 #url {
     width: 50%;
     margin: 3%;
+    padding: 2px;
 }
 
 .box {
     width: 100%;
     height: 300px;
-    overflow: scroll;
+    overflow: auto;
     resize: none;
     font-family: 'Share Tech Mono', monospace;
+    color: whitesmoke;
+    background-color: rgb(75, 76, 79);
+    outline: none;
 }
 
 #infoBoxes {
     flex-wrap: wrap;
     display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+    #infoBoxes {
+        flex-direction: column;
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .box {
+        width: 75%;
+        height: 150px;
+        font-size: 13px;
+        overflow: scroll;
+    }
+    #rgbValue {
+        font-size: 13px;
+        width: 75%;
+    }
 }
 
 #crawling {
@@ -51,6 +74,6 @@
     resize: none;
     font-family: 'Share Tech Mono', monospace;
     display: inline-block;
-    width: 30%;
+    width: 50%;
     text-align: center;
 }

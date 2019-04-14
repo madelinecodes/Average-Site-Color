@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Average Site Color</title>
 
 </head>
@@ -17,8 +18,8 @@
     <p>Enter a URL to find that websites average color. If you can't think of a url,
         I've put an example in for you!</p>
     <div>
-        <input id='url' value='https://madelinecodes.github.io/'>
-        <button type='submit' onclick='crawl()' class="btn btn-outline-info">Go</button>
+        <input id='url' value='https://madelinecodes.github.io/' onfocus="this.select();" >
+        <button type='submit' onclick='crawl()' id='submit' class="btn btn-outline-info">Go</button>
     </div>
     <div id='infoBoxes'>
         <div id='crawling'>
