@@ -1,0 +1,23 @@
+{
+  "name": "Average-Site-Color",
+  "version": "1.0.0",
+  "description": "Crawls a website for all images and calculates total average color",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madelinecodes/Average-Site-Color.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madelinecodes/Average-Site-Color/issues"
+  },
+  "homepage": "https://github.com/madelinecodes/Average-Site-Color#readme",
+  "dependencies": {
+    "ws": "^6.2.1"
+  }
+}
