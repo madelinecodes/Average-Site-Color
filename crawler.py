@@ -29,8 +29,8 @@ class LinkParser(HTMLParser):
         while self.pages_to_check and self.pages:
             page = self.pages_to_check.pop()
             print(json.dumps({'crawling':page}), flush=True)
-            req = Request(page, headers={'User-Agent': agent})
             try:
+                req = Request(page, headers={'User-Agent': agent})
                 res = request.urlopen(req)
             except:
                 continue

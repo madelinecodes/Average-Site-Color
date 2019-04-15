@@ -13,13 +13,14 @@
 
 </head>
 
-<body class="container text-center">
+<body  class="container text-center">
     <h1 id='title'> Average Site Color </h1>
-    <p>Enter a URL to find that websites average color. If you can't think of a url,
+    <p> Enter a URL to find that websites average color. If you can't think of a url,
         I've put an example in for you!</p>
+    <p> This is a demo of a command-line bot so I have limited the crawler to ten pages.</p>
     <div>
-        <input id='url' value='https://madelinecodes.github.io/' onfocus="this.select();" >
-        <button type='submit' onclick='crawl()' id='submit' class="btn btn-outline-info">Go</button>
+        <input id='url' value='https://madelinecodes.github.io/' onfocus="this.select();">
+        <button type='submit' onclick='crawl()' id='submit' class="btn btn-info">Go</button>
     </div>
     <div id='infoBoxes'>
         <div id='crawling'>
@@ -35,6 +36,13 @@
         <p>Average RGB value: </p>
         <textarea id='rgbValue' readonly></textarea>
     </div>
+    <footer class='footer'>
+        <p>For the full repository <a href="https://github.com/madelinecodes/Average-Site-Color">
+                visit my github</a>.</p>
+        <p>Visit my website at <a href="https://madelinecodes.github.io/">
+                madeline.codes</a>.</p>
+
+    </footer>
 </body>
 <script src="client.js"></script>
 

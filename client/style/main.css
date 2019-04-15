@@ -1,7 +1,9 @@
-.container {
+.container, body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f9f9f9;
+
 }
+
 
 #title {
     margin: 3%;
@@ -68,6 +70,7 @@
 #result {
     text-align: center;
     margin: 3%;
+    outline: none;
 }
 
 #rgbValue {
@@ -76,4 +79,15 @@
     display: inline-block;
     width: 50%;
     text-align: center;
+}
+
+.footer {
+    margin-top: 7%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer p a {
+    cursor: url(./heart.png), auto;
+    /* Icon made by https://www.flaticon.com/authors/smashicons */
 }

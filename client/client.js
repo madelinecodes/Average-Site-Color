@@ -12,6 +12,9 @@ function render(data) {
     } else if (data.scanning !== undefined) {
         scanningBox.innerHTML += `>>> ${data.scanning}\n`;
     } else if (data.finished !== undefined) {
+        if (data.finished.length === 0) {
+            scanningBox.innerHTML = 'Error scanning URL or no images found :(';
+        }
         const rgb = data.finished;
         const triple = `(${rgb[0].toFixed(2)} , ${rgb[1].toFixed(2)} , ${rgb[2].toFixed(2)})`;
         rgbBox.innerHTML = triple;
