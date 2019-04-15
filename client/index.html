@@ -13,14 +13,16 @@
 
 </head>
 
-<body  class="container text-center">
+<body class="container text-center">
     <h1 id='title'> Average Site Color </h1>
     <p> Enter a URL to find that websites average color. If you can't think of a url,
         I've put an example in for you!</p>
     <p> This is a demo of a command-line bot so I have limited the crawler to ten pages.</p>
-    <div>
-        <input id='url' value='https://madelinecodes.github.io/' onfocus="this.select();">
-        <button type='submit' onclick='crawl()' id='submit' class="btn btn-info">Go</button>
+    <div class="input-group w-50">
+        <input id='url' class="form-control" value='https://madelinecodes.github.io/' onfocus="this.select();">
+        <span class="input-group-btn">
+            <button class="btn btn-info" onclick='crawl()' id='submit' type="button">Go!</button>
+        </span>
     </div>
     <div id='infoBoxes'>
         <div id='crawling'>

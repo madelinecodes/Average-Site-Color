@@ -4,15 +4,19 @@
 
 }
 
-
 #title {
     margin: 3%;
 }
 
+.input-group {
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
 #url {
     width: 50%;
-    margin: 3%;
-    padding: 2px;
+    margin-right:10%;
 }
 
 .box {
