@@ -32,7 +32,7 @@ function crawl() {
     crawlingBox.innerHTML = '';
     scanningBox.innerHTML = '';
     rgbBox.innerHTML = '';
-    const ws = new WebSocket('ws://localhost:8080');
+    const ws = new WebSocket('ws://142.93.34.148:8080');
     ws.onmessage = msg => render(msg.data);
     ws.onopen = function (event) {
         ws.send(URL.value);
