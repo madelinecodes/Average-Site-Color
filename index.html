@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css">
     <link rel="icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Average Site Color</title>
@@ -14,34 +14,37 @@
 </head>
 
 <body class="container text-center">
-    <h1 id='title'> Average Site Color </h1>
-    <p> Enter a URL to find that websites average color. If you can't think of a url,
-        I've put an example in for you!</p>
-    <p> This is a demo of a command-line bot so I have limited the crawler to ten pages.</p>
-    <div class="input-group w-50">
-        <input id='url' class="form-control" value='https://madelinecodes.github.io/' onfocus="this.select();">
-        <span class="input-group-btn">
-            <button class="btn btn-info" onclick='crawl()' id='submit' type="button">Go!</button>
-        </span>
+    <div class='textBox'>
+        <h1 id='title'> Average Site Color </h1>
+        <p> Enter a URL to find that websites average color. If you can't think of a url,
+            I've put an example in for you! This is a demo of a command-line bot so I have limited the crawler to ten pages. There will also be more written here but that will be written a little later.</p>
+        <div class="input input-group">
+            <input id='url' class="form-control" value='https://madelinecodes.github.io/' onfocus="this.select();">
+            <span class="input-group-btn">
+                <button class="btn btn-dark" onclick='crawl()' id='submit' type="button">Go!</button>
+            </span>
+        </div>
     </div>
     <div id='infoBoxes'>
         <div id='crawling'>
             <p class='info'>Crawling:</p>
-            <textarea id='crawlingBox' class='box' readonly></textarea>
+            <div id='crawlingBox' class='box' readonly><p class='arrows'>>>></p><p class='blinker'>&nbsp;</p></div>
         </div>
         <div id='scanning'>
             <p class='info'>Scanning:</p>
-            <textarea id='scanningBox' class='box' readonly></textarea>
+            <div id='scanningBox' class='box' readonly><p class='arrows'>>>></p><p class='blinker'>&nbsp; </p></div>
         </div>
     </div>
     <div id='result'>
         <p>Average RGB value: </p>
-        <textarea id='rgbValue' readonly></textarea>
+        <div id='rgbValue' readonly>
+            <p id='rgbValText'>&nbsp;</p>
+        </div>
     </div>
     <footer class='footer'>
-        <p>For the full repository <a href="https://github.com/madelinecodes/Average-Site-Color">
+        <p>For the full repository <a class='link' href="https://github.com/madelinecodes/Average-Site-Color">
                 visit my github</a>.</p>
-        <p>Visit my website at <a href="https://madelinecodes.github.io/">
+        <p>Visit my website at <a class='link' href="https://madelinecodes.github.io/">
                 madeline.codes</a>.</p>
 
     </footer>
