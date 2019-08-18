@@ -1,19 +1,14 @@
 const { spawn } = require('child_process');
-const WebSocket = require('ws');
+const express = require('express');
+const app = express();
+const expressWs = require('express-ws')(app);
 
-const wss = new WebSocket.Server({ port: 3000 });
-
-wss.on('connection', function connection(ws) {
-
-    /**
-     * @param message a website to pass to crawler
-     */
+app.ws('/crawler', function(ws, req) {
     ws.on('message', function incoming(message) {
-
-        const crawler = spawn('python', ['crawler.py', message, '10']);
+        const crawler = spawn('python3', ['crawler.py', message, '10']);
         crawler.stdout.on('data', function (data) {
-            // Buffer to string
-            ws.send(String(data));
+            // We may get concatted JSON so here we clean it
+            String(data).split('\n').filter(Boolean).forEach(line => ws.send(line));
         });
 
         crawler.stderr.on('data', function (data) {
@@ -22,3 +17,14 @@ wss.on('connection', function connection(ws) {
     });
 });
 
+
+app.use(express.static('public'));
+
+app.get('/', function(request, response) {
+  response.sendFile(__dirname + '/index.html');
+});
+
+// listen for requests 
+const listener = app.listen(process.env.PORT, function() {
+  console.log('Your app is listening on port ' + listener.address().port);
+});

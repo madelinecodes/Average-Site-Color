@@ -1,0 +1,269 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.container,
+body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #f9f9f9;
+	font-size: 1rem;
+	box-sizing: content-box;
+}
+
+.title {
+	background-color: rgb(236, 229, 226);
+	width: 100vw;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	position: relative;
+}
+
+.titleImg {
+	width: 70%;
+}
+
+.input-group {
+	margin: 0 auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.btn {
+	display: inline-block;
+	color: white;
+	background-color: black;
+}
+
+.spinner {
+	display: none;
+	border: 10px solid #f3f3f3;
+	border-top: 10px solid rgb(75, 76, 79);
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#url {
+	margin-right: 5%;
+}
+
+.textBox {
+	width: 50%;
+	margin: auto;
+}
+
+.textBox p {
+	line-height: 1.5;
+  margin-top: 3%;
+}
+
+.box {
+	width: 100%;
+	overflow: scroll;
+	height: 300px;
+	resize: none;
+	font-family: 'Share Tech Mono', monospace;
+	color: whitesmoke;
+	background-color: rgb(75, 76, 79);
+	outline: none;
+	letter-spacing: 1.5px;
+	border-top: rgb(155, 153, 153) 20px solid;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+.infoBoxes {
+	flex-wrap: wrap;
+	display: flex;
+	text-align: left;
+	/*     flex-direction: column; */
+}
+
+#crawling {
+	float: right;
+	flex-grow: 1;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 2%;
+	max-width: 100%
+}
+
+#scanning {
+	float: left;
+	flex-grow: 1;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 2%;
+	max-width: 100%
+}
+
+.blinker {
+	display: inline;
+	margin-left: 3px;
+	margin-top: 1px;
+	width: 10px;
+	border-left: .50em solid white;
+	animation: blink-caret .75s step-end infinite;
+}
+
+.arrows {
+	display: inline;
+	width: 50px;
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent
+	}
+	50% {
+		border-color: white;
+	}
+}
+
+.text {
+	overflow: hidden;
+	letter-spacing: .15em;
+	white-space: nowrap;
+	animation: typing 2.5s steps(40, end);
+}
+
+@keyframes typing {
+	from {
+		width: 0
+	}
+	to {
+		width: 100%
+	}
+}
+
+.info {
+	text-align: left;
+}
+
+#result {
+	margin: 3%;
+	outline: none;
+	height: 1%
+}
+
+#rgbValue {
+	resize: none;
+	display: inline-block;
+	width: 50%;
+	background-color: rgb(75, 76, 79);
+}
+
+#rgbValText {
+	font-family: 'Share Tech Mono', monospace;
+	text-align: center;
+	color: whitesmoke;
+}
+
+.footer {
+	padding-top: 80px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.link {
+	text-decoration: underline;
+	cursor: url(./heart.png), auto;
+	/* Icon made by https://www.flaticon.com/authors/smashicons */
+}
+
+
+/* Breakpoints*/
+
+@media only screen and (max-width: 768px) {
+	.container {
+		text-align: center;
+	}
+	.textBox {
+		width: 80%;
+		margin: auto;
+		text-align: center;
+	}
+	#infoBoxes {
+		flex-direction: column;
+		flex-wrap: wrap;
+		display: flex;
+	}
+	.info {
+		margin-bottom: 3px;
+	}
+	.box {
+		overflow: scroll;
+	}
+	.footer {
+		bottom: 0;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.container {
+		font-size: .6rem;
+	}
+	#scanning,
+	#crawling {
+		width: 75%;
+		margin: auto;
+		margin-top: 2%;
+	}
+	#url {
+		font-size: .7rem;
+		width: 100%;
+		margin: 0
+	}
+	.btn {
+		width: 70px;
+		height: 22px;
+		font-size: .6rem;
+		padding: 0;
+	}
+	.spinner {
+		margin: auto
+	}
+	.input-group-btn {
+		margin: auto;
+		margin-top: 5px;
+	}
+	#infoBoxes {
+		flex-direction: column;
+		flex-wrap: wrap;
+		display: flex;
+	}
+	.info {
+		margin-bottom: 3px;
+	}
+	.box {
+		height: 150px;
+		overflow: scroll;
+	}
+	#rgbValue {
+		font-size: .7rem;
+		width: 75%;
+	}
+	.textBox {
+		width: 100%;
+		font-size: .75rem;
+	}
+	.titleImg {
+		width: 100%;
+	}
+}

@@ -1,0 +1,4 @@
+# Glitch bugs with requirements.txt and package.json are present
+
+Pillow==6.0.0
+requests==2.20.1
