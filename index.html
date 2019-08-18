@@ -1,54 +1,59 @@
-<!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="icon" href="favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Average Site Color</title>
-
-</head>
-
-<body class="container text-center">
-    <div class='textBox'>
-        <h1 id='title'> Average Site Color </h1>
-        <p> Enter a URL to find that websites average color. If you can't think of a url,
-            I've put an example in for you! This is a demo of a command-line bot so I have limited the crawler to ten pages. There will also be more written here but that will be written a little later.</p>
-        <div class="input input-group">
-            <input id='url' class="form-control" value='https://madelinecodes.github.io/' onfocus="this.select();">
+   <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <link rel="stylesheet" href="style/main.css">
+      <link rel="icon" href="favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> Average Site Color</title>
+   </head>
+   <body class="container text-center">
+      <div class="title">
+         <img class="titleImg" src="https://cdn.glitch.com/0d31a2f5-02af-4471-b529-2a4a3718b72e%2FASC%20logo%20pink.png?v=1562067934847" alt="Average Site Color"> 
+      </div>
+      <div class="textBox">
+         <p> Enter a URL to find that website's average color. Defined as the average color of all the <b>website's images weighted per pixel</b>. Try running it against my website! This is a demo of the project so I have limited the crawler to ten pages.</p>
+         <div class="input input-group">
+            <input id="url" class="form-control" value="https://madeline.codes/" onfocus="this.select();">
             <span class="input-group-btn">
-                <button class="btn btn-dark" onclick='crawl()' id='submit' type="button">Go!</button>
+               <div class="spinner">
+               </div>
+               <button class="btn btn-dark" onclick="crawl(); spinner();" id="submit" type="button">Go!</button>
             </span>
-        </div>
-    </div>
-    <div id='infoBoxes'>
-        <div id='crawling'>
-            <p class='info'>Crawling:</p>
-            <div id='crawlingBox' class='box' readonly><p class='arrows'>>>></p><p class='blinker'>&nbsp;</p></div>
-        </div>
-        <div id='scanning'>
-            <p class='info'>Scanning:</p>
-            <div id='scanningBox' class='box' readonly><p class='arrows'>>>></p><p class='blinker'>&nbsp; </p></div>
-        </div>
-    </div>
-    <div id='result'>
-        <p>Average RGB value: </p>
-        <div id='rgbValue' readonly>
-            <p id='rgbValText'>&nbsp;</p>
-        </div>
-    </div>
-    <footer class='footer'>
-        <p>For the full repository <a class='link' href="https://github.com/madelinecodes/Average-Site-Color">
-                visit my github</a>.</p>
-        <p>Visit my website at <a class='link' href="https://madelinecodes.github.io/">
-                madeline.codes</a>.</p>
-
-    </footer>
-</body>
-<script src="client.js"></script>
-
+         </div>
+      </div>
+      <div class="infoBoxes">
+         <div id="crawling">
+            <p class="info">Crawling:</p>
+            <div id="crawlingBox" class="box" readonly>
+               <p class="arrows">>>></p>
+               <p class="blinker">&nbsp;</p>
+            </div>
+         </div>
+         <div id="scanning">
+            <p class="info">Scanning:</p>
+            <div id="scanningBox" class="box" readonly>
+               <p class="arrows">>>></p>
+               <p class="blinker">&nbsp; </p>
+            </div>
+         </div>
+      </div>
+      <div id="result">
+         <p>Average RGB value: </p>
+         <div id="rgbValue" readonly>
+            <p id="rgbValText">&nbsp;</p>
+         </div>
+      </div>
+      <footer class="footer">
+         <p>For the full repository <a class="link" href="https://github.com/madelinecodes/Average-Site-Color">
+            visit my github</a>.
+         </p>
+         <p>Visit my website at <a class="link" href="https://madelinecodes.github.io/">
+            madeline.codes</a>.
+         </p>
+      </footer>
+   </body>
+   <script src="/js/client.js"></script>
 </html>

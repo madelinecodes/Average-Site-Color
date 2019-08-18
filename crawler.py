@@ -15,18 +15,18 @@ agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, li
 
 
 class LinkParser(HTMLParser):
-    def __init__(self, home, pages=True):
+    def __init__(self, home, page_limit=True):
         super().__init__()
         self.home = home
         self.checked_links = set()
         self.pages_to_check = deque()
         self.pages_to_check.appendleft(home)
         self.images = list()
-        self.pages = pages
+        self.page_limit = page_limit
         self.scanner()
 
     def scanner(self):
-        while self.pages_to_check and self.pages:
+        while self.pages_to_check and self.page_limit:
             page = self.pages_to_check.pop()
             print(json.dumps({'crawling':page}), flush=True)
             try:
@@ -38,7 +38,7 @@ class LinkParser(HTMLParser):
                 with res as f:
                     body = f.read().decode('utf-8', errors='ignore')
                     self.feed(body)
-            self.pages -= 1
+            self.page_limit -= 1
         self.average_color()
 
     # print the average color of all crawled images
@@ -51,7 +51,7 @@ class LinkParser(HTMLParser):
             weighted_nums = list()
             for idx, val in enumerate(color):
                 weighted_nums.append(val * self.images[idx]['pixels'] / pixels)
-                rgb_val.append(sum(weighted_nums))
+            rgb_val.append(sum(weighted_nums))
         print(json.dumps({'finished':rgb_val}), flush=True)
 
     def handle_starttag(self, tag, attrs):
