@@ -1,8 +1,12 @@
 # Average Site Color
 
-Have you ever been curious about the average color of a website? Defined here as the weighted average RGB value of any image found.
+Have you ever been curious about the average color of a website?
 
-A Node.js server uses a Python subprocess to crawl and scan the given URL. The actions and animations on the front are vanilla JS.
+Average color is defined here as the weighted average RGB value of any image found.
+
+A Node.js server uses a Python subprocess to crawl and scan the given URL.
+
+The actions and animations on the front are vanilla JS.
 
 This is deployed via Glitch @ https://average-site-color.glitch.me/
 
