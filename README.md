@@ -1,4 +1,4 @@
-# Average Site Color
+# Average Site Color 🕷️
 
 Have you ever been curious about the average color of a website?
 
@@ -27,3 +27,9 @@ This is deployed via Glitch @ https://average-site-color.glitch.me/
 ## Run
 
 `npm start`
+
+&nbsp;
+
+## License
+
+MIT!
