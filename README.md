@@ -8,7 +8,7 @@ A Node.js server uses a Python subprocess to crawl and scan the given URL.
 
 The actions and animations on the front are vanilla JS.
 
-This is deployed via Glitch @ https://average-site-color.glitch.me/
+Deployed [live on Glitch](https://average-site-color.glitch.me/)!
 
 &nbsp;
 
